@@ -1,0 +1,43 @@
+﻿@using Qeryd.Models.Entity;
+@model List<KATEGORILER>
+     
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View.cshtml";
+}
+
+<h2>KATEGORİLER</h2> 
+       <table class="table table-bordered">
+           <tr>
+
+               <th>Kategori ID</th>
+               <th>Kategori ADI</th>
+               <th>SİL</th>
+               <th>GÜNCELLE</th>
+               
+
+           </tr>
+        
+           <tbody>
+               @foreach (var x in Model)
+               {
+               <tr>
+                   <th>@x.KATEGORIID</th>
+                   <th>@x.KATEGORİAD</th>
+                   <td><a href="/KATEGORI/SIL/@x.KATEGORIID" class="btn btn-danger">SİL</a>
+                   <td><a href="/KATEGORI/GUNCELLE/@x.KATEGORIID" class="btn btn-danger">GÜNCELLE</a>
+
+               </tr>
+               }
+           </tbody>
+
+
+
+       </table>
+<a href="/KATEGORI/Yenikategori/" class="btn btn-primary">YENİ KATEGORİ EKLE</a>
+ 
+    
+
+
+
+
