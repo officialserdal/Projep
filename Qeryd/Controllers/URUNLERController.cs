@@ -20,8 +20,19 @@ namespace Qeryd.Controllers
         [HttpGet]
         public ActionResult YenıUrun()
         {
-            return View();
 
+            List<SelectListItem> degerler = ((List<SelectListItem>)(from i in db.KATEGORILER.ToList()
+                                                                    select new SelectListItem
+                                                                    {
+                                                                        Text = i.KATEGORİAD,
+                                                                        Value = i.KATEGORIID.ToString()
+                                                                    }));
+
+
+
+            ViewBag.dgr = degerler;
+            return View();
+            
         }
         [HttpPost]
         public ActionResult YenıUrun(TBLURUNLER_ p7)

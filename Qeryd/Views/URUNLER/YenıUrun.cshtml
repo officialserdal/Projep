@@ -1,4 +1,4 @@
-﻿
+﻿@model Qeryd.Models.Entity.KATEGORILER
 @{
     ViewBag.Title = "YenıUrun";
     Layout = "~/Views/Shared/View.cshtml";
@@ -18,7 +18,10 @@
     <div>
 
         <label>Kategori Seçiniz</label>
-        <input type="text" class="form-control" name="URUNKATEGORI" />
+        @Html.DropDownListFor(m => m.KATEGORİAD,(List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+
+        
     </div>
     <div>
         <label>Fiyatı</label>
