@@ -21,12 +21,14 @@ namespace Qeryd.Controllers
         public ActionResult YenıUrun()
         {
 
-            List<SelectListItem> degerler = ((List<SelectListItem>)(from i in db.KATEGORILER.ToList()
-                                                                    select new SelectListItem
-                                                                    {
-                                                                        Text = i.KATEGORİAD,
-                                                                        Value = i.KATEGORIID.ToString()
-                                                                    }));
+            List<SelectListItem> degerler = db.KATEGORILER.ToList()
+     .Select(i => new SelectListItem
+     {
+         Text = i.KATEGORİAD,
+         Value = i.KATEGORIID.ToString()
+     })
+     .ToList();
+
 
 
 
@@ -37,12 +39,23 @@ namespace Qeryd.Controllers
         [HttpPost]
         public ActionResult YenıUrun(TBLURUNLER_ p7)
         {
+            var ktg = db.KATEGORILER.Where(m => m.KATEGORIID == p7.KATEGORILER.KATEGORIID).FirstOrDefault();
+            p7.KATEGORILER = ktg;
+
             db.TBLURUNLER_.Add(p7);
             db.SaveChanges();
-            return View();               
+            return RedirectToAction("Index");
+        }
+        public ActionResult SIL(int id)
+        {
+            var urun = db.TBLURUNLER_.Find( id);
+            db.TBLURUNLER_.Remove(urun);
+            db.SaveChanges();
+            return RedirectToAction("Index");
 
-        }  
-      
-         
+
+        }
+
+
     }
 }

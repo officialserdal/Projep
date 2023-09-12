@@ -250,9 +250,9 @@
     <Content Include="Views\URUNLER\Index.cshtml" />
     <Content Include="Views\MUSTERI\Index.cshtml" />
     <Content Include="Views\Kategori\Yenikategori.cshtml" />
-    <Content Include="Views\Kategori\SIL.cshtml" />
     <Content Include="Views\MUSTERI\YenıMusterı.cshtml" />
     <Content Include="Views\URUNLER\YenıUrun.cshtml" />
+    <Content Include="Views\Kategori\KategorıGetır.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

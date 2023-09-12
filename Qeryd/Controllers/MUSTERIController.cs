@@ -30,6 +30,15 @@ namespace Qeryd.Controllers
             return View();
 
         }
+        public ActionResult SIL(int id)
+        {
+            var musterı = db.TBLMUSTERILER_.Find(id);
+            db.TBLMUSTERILER_.Remove(musterı);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+        }
 
     }
 }

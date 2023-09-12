@@ -11,6 +11,8 @@
         <th>MÜŞTERİ ID</th>
         <th>MÜŞTERİ ADI</th>
         <th>MÜŞTERİ SOYADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
     </tr>
 
     <tbody>
@@ -18,11 +20,13 @@
 
         @foreach (var x in Model)
         {
-            <tr>
-                <td>@x.MUSTERIID</td>
-                <td>@x.MUSTERIAD</td>
-                <td>@x.MUSTERISOYAD</td>
-            </tr>
+        <tr>
+            <td>@x.MUSTERIID</td>
+            <td>@x.MUSTERIAD</td>
+            <td>@x.MUSTERISOYAD</td>
+            <td><a href="/MUSTERI/SIL/@x.MUSTERIID" class="btn btn-danger">SİL</a>
+            <td><a href="/KATEGORI/GUNCELLE/@x.MUSTERIID" class="btn btn-danger">GÜNCELLE</a>
+        </tr>
 
         }
  

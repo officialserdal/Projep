@@ -32,14 +32,25 @@ namespace Qeryd.Controllers
             return View();
 
         }
-        [HttpPost]
-        public ActionResult SIL(KATEGORILER p2)
+        
+        public ActionResult SIL(int id)
         {
-           var a= db.KATEGORILER.Remove(p2);
+            var kategorı = db.KATEGORILER.Find(id);
+            db.KATEGORILER.Remove(kategorı);
             db.SaveChanges();
-            return View();
+          return  RedirectToAction("Index");
+
 
         }
+        public ActionResult KategorıGetır(int id)
+        {
+            var ktgr = db.KATEGORILER.Find(id);
+            return View("KategorıGetır", ktgr);
+
+
+            
+        }
+       
 
 
 

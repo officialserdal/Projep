@@ -1,4 +1,4 @@
-﻿@model Qeryd.Models.Entity.KATEGORILER
+﻿@model Qeryd.Models.Entity.TBLURUNLER_
 @{
     ViewBag.Title = "YenıUrun";
     Layout = "~/Views/Shared/View.cshtml";
@@ -18,10 +18,10 @@
     <div>
 
         <label>Kategori Seçiniz</label>
-        @Html.DropDownListFor(m => m.KATEGORİAD,(List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.KATEGORILER.KATEGORIID,(List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
 
 
-        
+    
     </div>
     <div>
         <label>Fiyatı</label>
@@ -33,7 +33,9 @@
         <input type="text" class="form-control" name="STOK" />
 
     </div>
-    <button class="btn btn-info">Ürün Ekle</button>
-
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ürün Ekle</button>
+    </div>
 </form>
+
 
