@@ -1,14 +1,20 @@
-﻿
+﻿@model Qeryd.Models.Entity.KATEGORILER
 @{
     ViewBag.Title = "Yenikategori";
     Layout = "~/Views/Shared/View.cshtml";
 }
 
 <form class="form-group" method="post">
-    <div>
+    @*<div>
 
       <label>Kategori Adı</label>
         <input type="text" class="form-control" name="KATEGORİAD" />
+
+    </div>*@
+    <div>
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(m => m.KATEGORİAD, new {@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.KATEGORİAD,"",new { @stlye = "color:red "})
 
     </div>
     <div style="margin-top:15px">

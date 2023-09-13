@@ -11,7 +11,8 @@ namespace Qeryd.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class KATEGORILER
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,7 @@ namespace Qeryd.Models.Entity
         }
     
         public short KATEGORIID { get; set; }
+        [Required(ErrorMessage ="Kategori Adını Boş Bırakamazsınız")]
         public string KATEGORİAD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

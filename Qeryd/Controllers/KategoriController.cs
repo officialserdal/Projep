@@ -27,6 +27,10 @@ namespace Qeryd.Controllers
         [HttpPost]
         public ActionResult Yenikategori(KATEGORILER p1)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Yenikategori");
+            }
             db.KATEGORILER.Add(p1);
             db.SaveChanges();
             return View();
@@ -49,6 +53,14 @@ namespace Qeryd.Controllers
 
 
             
+        }
+        public ActionResult Guncelle(KATEGORILER p1)
+        {
+            var ktg = db.KATEGORILER.Find(p1.KATEGORIID);
+            ktg.KATEGORİAD = p1.KATEGORİAD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
        
 

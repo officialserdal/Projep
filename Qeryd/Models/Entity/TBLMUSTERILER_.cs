@@ -11,7 +11,7 @@ namespace Qeryd.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class TBLMUSTERILER_
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +21,7 @@ namespace Qeryd.Models.Entity
         }
     
         public int MUSTERIID { get; set; }
+        [Required(ErrorMessage = "Müþteri Adýný Boþ Býrakamazsýnýz")]
         public string MUSTERIAD { get; set; }
         public string MUSTERISOYAD { get; set; }
     

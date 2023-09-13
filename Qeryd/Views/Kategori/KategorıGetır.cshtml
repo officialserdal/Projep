@@ -1,8 +1,36 @@
-﻿
+﻿@model Qeryd.Models.Entity.KATEGORILER
+
+
 @{
     ViewBag.Title = "KategorıGetır";
     Layout = "~/Views/Shared/View.cshtml";
 }
 
-<h2>KategorıGetır Sayfasıdır</h2>
+@using (@Html.BeginForm("Guncelle", "Kategori", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.KATEGORIID)
+    @Html.TextBoxFor(m => m.KATEGORIID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.KATEGORİAD)
+    @Html.TextBoxFor(m => m.KATEGORİAD, new { @class = "form-control" })
+
+
+
+</div>
+<div>
+    <button class="btn btn-warning" >Kategori Güncelle</button>
+
+
+
+</div>
+}
+
+
+
+
+
+
+
+
 
