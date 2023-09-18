@@ -55,6 +55,37 @@ namespace Qeryd.Controllers
 
 
         }
+        public ActionResult UrunGetır(int id)
+        {
+            var urun = db.TBLURUNLER_.Find(id);
+
+            List<SelectListItem> degerler = db.KATEGORILER.ToList()
+     .Select(i => new SelectListItem
+     {
+         Text = i.KATEGORİAD,
+         Value = i.KATEGORIID.ToString()
+     })
+     .ToList(); 
+            ViewBag.dgr = degerler;
+            return View("UrunGetır", urun);
+
+        }
+        public ActionResult Guncelle(TBLURUNLER_ p)
+        {
+            var urun = db.TBLURUNLER_.Find(p.URUNID);
+            urun.URUNAD = p.URUNAD;
+            urun.MARKA = p.MARKA;
+            urun.STOK = p.STOK;
+            urun.FIYAT = p.FIYAT;
+            //urun.URUNKATEGORI = p.URUNKATEGORI;
+            var ktg = db.KATEGORILER.Where(m => m.KATEGORIID == p.KATEGORILER.KATEGORIID).FirstOrDefault();
+            urun.URUNKATEGORI = ktg.KATEGORIID;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+
+        }
 
 
     }
