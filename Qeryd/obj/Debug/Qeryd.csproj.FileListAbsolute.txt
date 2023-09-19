@@ -164,3 +164,7 @@ C:\Users\srdl_\Documents\GitHub\Projep\Qeryd\obj\Debug\Qeryd.csproj.CoreCompileI
 C:\Users\srdl_\Documents\GitHub\Projep\Qeryd\obj\Debug\Qeryd.csproj.CopyComplete
 C:\Users\srdl_\Documents\GitHub\Projep\Qeryd\obj\Debug\Qeryd.dll
 C:\Users\srdl_\Documents\GitHub\Projep\Qeryd\obj\Debug\Qeryd.pdb
+C:\Users\srdl_\Documents\GitHub\Projep\Qeryd\bin\PagedList.dll
+C:\Users\srdl_\Documents\GitHub\Projep\Qeryd\bin\PagedList.Mvc.dll
+C:\Users\srdl_\Documents\GitHub\Projep\Qeryd\bin\PagedList.xml
+C:\Users\srdl_\Documents\GitHub\Projep\Qeryd\bin\PagedList.Mvc.xml

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Qeryd.Models.Entity;
+using PagedList;
+using PagedList.Mvc;
+
 
 
 namespace Qeryd.Controllers
@@ -12,9 +15,10 @@ namespace Qeryd.Controllers
     {
         // GET: Kategori
         MDbMvcStokEntities3 db=new MDbMvcStokEntities3();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            var degerler = db.KATEGORILER.ToList();
+            //  var degerler = db.KATEGORILER.ToList();
+            var degerler = db.KATEGORILER.ToList().ToPagedList(sayfa,4);
             return View(degerler);
         }
         [HttpGet]
