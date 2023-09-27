@@ -11,10 +11,20 @@ namespace Qeryd.Controllers
     {
         // GET: MUSTERI
         MDbMvcStokEntities3 db = new MDbMvcStokEntities3();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var degerler = db.TBLMUSTERILER_.ToList();
-            return View(degerler);
+            var degerler=from d in db.TBLMUSTERILER_ select d;
+            if (!string.IsNullOrEmpty(p))
+            {
+                degerler = degerler.Where(m => m.MUSTERIAD.Contains(p));
+
+            }
+            return View(degerler.ToList());
+
+
+
+            //var degerler = db.TBLMUSTERILER_.ToList();
+            //return View(degerler);
         }
         [HttpPost]
         public ActionResult YenıMusterı(TBLMUSTERILER_ P4)

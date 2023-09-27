@@ -1,4 +1,4 @@
-﻿
+﻿@model Qeryd.Models.Entity.TBLSATISLAR
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/View.cshtml";
@@ -16,32 +16,33 @@
 
 
             </div>
-            <form>
+            <form method="post" action="/satis/Yenisatiş">
                 <div class="modal-body">
                     <label>
                         Ürün Adı
                     </label>
-                    <input type="text" name="ürün " class="form-control" />
+                    @Html.TextBoxFor(m => m.URUN, new { @class = "form-control" })
                     <br />
                     <label>
-                        Ürün Markası
+                        Müşteri Adı Soyadı
                     </label>
 
-                    <input type="text" name="ürün " class="form-control" />
+                    @Html.TextBoxFor(m => m.MUSTERI, new { @class = "form-control" })
                     <br />
                     <label>
-                       Müşteri Adı Soyadı
+                        Adet
                     </label>
 
-                    <input type="text" name="ürün " class="form-control" />
+                    @Html.TextBoxFor(m => m.ADET, new { @class = "form-control" })
                     <br />
                     <label>
-                        Müşteri Telefonu
+                        Fiyat
                     </label>
 
-                    <input type="text" name="ürün " class="form-control" />
+                    @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
                     <br />
-                    <button class="btn btn-info">Verileri Kaydet</button>
+                    <button type="submit" class="btn btn-info">Satış İşlemini Yap</button>
+                    <button type="button" class="btn btn-danger"data-dismiss="modal">Vazgeç</button>
 
                 </div>
 

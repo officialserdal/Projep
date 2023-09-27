@@ -240,7 +240,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Default\Index.cshtml" />
     <Content Include="web\webfonts\fa-brands-400.eot" />
     <Content Include="web\webfonts\fa-brands-400.ttf" />
     <Content Include="web\webfonts\fa-brands-400.woff" />

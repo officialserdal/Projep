@@ -4,6 +4,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/View.cshtml";
 }
+ @using (Html.BeginForm("Index", "MUSTERI", FormMethod.Get))
+            {
+                <p>
+                    Aranayacak Müşteri Adı:@Html.TextBox("p")
+                    <input type="submit" value="ara" />
+                </p>
+            }
+
+
 
 <table class="table table-bordered">
 
